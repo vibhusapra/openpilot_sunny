@@ -1,8 +1,7 @@
 from dataclasses import dataclass, field
 
 from cereal import car
-from openpilot.selfdrive.car import Bus, CarSpecs, DbcDict, PlatformConfig, Platforms
-from openpilot.selfdrive.car.lateral import AngleSteeringLimits
+from openpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms, dbc_dict
 from openpilot.selfdrive.car.docs_definitions import CarDocs, CarHarness, CarParts
 from openpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
 
@@ -28,19 +27,13 @@ class VolvoCarDocs(CarDocs):
 
 @dataclass
 class VolvoCMAPlatformConfig(PlatformConfig):
-  dbc_dict: DbcDict = field(default_factory=lambda: {
-    Bus.pt: 'volvo_front_1_cma',
-    Bus.main: 'volvo_mid_1',
-    Bus.party: 'volvo_mid_1',
-  })
-  
+  def init(self):
+    pass
+
 @dataclass
 class VolvoSPAPlatformConfig(PlatformConfig):
-  dbc_dict: DbcDict = field(default_factory=lambda: {
-    Bus.pt: 'volvo_front_1_spa',
-    Bus.main: 'volvo_mid_1',
-    Bus.party: 'volvo_mid_1',
-  })
+  def init(self):
+    pass
 
 
 class CAR(Platforms):
@@ -52,6 +45,7 @@ class CAR(Platforms):
       steerRatio=15.8,
       centerToFrontRatio=0.52,
     ),
+    dbc_dict('volvo_front_1_cma', None, chassis_dbc='volvo_mid_1'),
   )
   POLESTAR_2 = VolvoCMAPlatformConfig(
     [VolvoCarDocs("Polestar 2 2020-2024")],
@@ -61,6 +55,7 @@ class CAR(Platforms):
       steerRatio=15.8,  # Same as XC40 (CMA platform)
       centerToFrontRatio=0.52,
     ),
+    dbc_dict('volvo_front_1_cma', None, chassis_dbc='volvo_mid_1'),
   )
   #TODO update car specs
   VOLVO_S60_RECHARGE = VolvoSPAPlatformConfig(
@@ -71,6 +66,7 @@ class CAR(Platforms):
       steerRatio=15.8,
       centerToFrontRatio=0.52,
     ),
+    dbc_dict('volvo_front_1_spa', None, chassis_dbc='volvo_mid_1'),
   )
 
 

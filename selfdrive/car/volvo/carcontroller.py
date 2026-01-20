@@ -1,11 +1,12 @@
 from opendbc.can.packer import CANPacker
 from cereal import car
-from openpilot.selfdrive.car import Bus
 from openpilot.selfdrive.car.interfaces import CarControllerBase
 from openpilot.selfdrive.car.volvo.helpers import LCA3CounterSync
 from openpilot.selfdrive.car.volvo.live_testing import LiveTestingManager
-from openpilot.selfdrive.car.volvo.volvocan import create_lca_message, create_pscm_message, create_lca_3_message, create_lca_2_message, create_lca_4_message, create_lca_5_message, create_lca_6_message, create_lca_7_message, create_speed_message, create_speed_2_message, create_speed_3_message, create_0x1a_message, create_gear_position_message, create_egsm_message, create_pscm_related_message
+from openpilot.selfdrive.car.volvo.volvocan import CanBus, create_lca_message, create_pscm_message, create_lca_3_message, create_lca_2_message, create_lca_4_message, create_lca_5_message, create_lca_6_message, create_lca_7_message, create_speed_message, create_speed_2_message, create_speed_3_message, create_0x1a_message, create_gear_position_message, create_egsm_message, create_pscm_related_message
 from openpilot.selfdrive.car.volvo.values import CarControllerParams
+
+Bus = CanBus  # Alias for compatibility
 
 
 class CarController(CarControllerBase):

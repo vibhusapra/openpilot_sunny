@@ -2,6 +2,14 @@ import random
 from openpilot.selfdrive.car.volvo.helpers import checksum_lca_2_message, checksum_2_0x69_message, checksum_1_pscm_related_message, checksum_2_pscm_related_message, checksum_lca_4_message, checksum_lca_5_message
 from openpilot.selfdrive.car.carlog import carlog
 
+
+# CAN bus constants for Volvo
+# Matches the keys returned by dbc_dict()
+class CanBus:
+  pt = "pt"          # Powertrain bus (FRONT-1 CAN) - bus number 1
+  main = "chassis"   # Main bus (MID-1 CAN) - bus number 0
+  party = "chassis"  # Party/camera bus (also MID-1) - bus number 2
+
 def create_lca_message(packer, lat_active: bool, apply_angle: float, msg_lca: dict,
                        overrides: dict | None = None):
   """
