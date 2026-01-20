@@ -12,6 +12,7 @@ from openpilot.selfdrive.car.subaru.values import CAR as SUBARU
 from openpilot.selfdrive.car.tesla.values import CAR as TESLA
 from openpilot.selfdrive.car.toyota.values import CAR as TOYOTA
 from openpilot.selfdrive.car.volkswagen.values import CAR as VW
+from openpilot.selfdrive.car.volvo.values import CAR as VOLVO
 
 FW_VERSIONS = get_interface_attr('FW_VERSIONS', combine_brands=True, ignore_none=True)
 _FINGERPRINTS = get_interface_attr('FINGERPRINTS', combine_brands=True, ignore_none=True)

@@ -68,6 +68,13 @@ class Car:
     elif self.mads_ndlob:
       self.CP.alternativeExperience |= ALTERNATIVE_EXPERIENCE.MADS_DISABLE_DISENGAGE_LATERAL_ON_BRAKE
 
+    # Volvo-specific feature flags (using high bits to avoid conflicts with standard flags)
+    if self.CP.carFingerprint.startswith("VOLVO"):
+      if self.params.get_bool("VolvoDoubleTapCruise"):
+        self.CP.alternativeExperience |= 64   # Bit 6: double-tap cruise
+      if self.params.get_bool("VolvoSpoofPAHandsOnWheel"):
+        self.CP.alternativeExperience |= 128  # Bit 7: spoof PA hands on wheel
+
     if self.CP.customStockLongAvailable and self.CP.pcmCruise and self.params.get_bool("CustomStockLong"):
       self.CP.pcmCruiseSpeed = False
 
