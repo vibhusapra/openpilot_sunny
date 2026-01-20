@@ -10,13 +10,7 @@ Ecu = car.CarParams.Ecu
 
 class CarControllerParams:
   STEER_STEP = 1  # 100 Hz LCA command frequency (controlsd runs at 100 Hz)
-
-  # Angle limits for rate limiting
-  ANGLE_LIMITS: AngleSteeringLimits = AngleSteeringLimits(
-    390, # deg - max steering angle
-    ([0., 5., 25.], [2.5, 1.5, .2]),  # rate up limits at different speeds
-    ([0., 5., 25.], [5., 2., .3]),    # rate down limits at different speeds
-  )
+  # Note: Angle rate limiting is handled by panda safety model, not in Python
 
 
 @dataclass
