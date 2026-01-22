@@ -1,6 +1,6 @@
 from cereal import car
 from openpilot.selfdrive.car import Bus
-from openpilot.selfdrive.can.parser import CANParser
+from opendbc.can.parser import CANParser
 from openpilot.common.conversions import Conversions as CV
 from openpilot.selfdrive.car.volvo.values import DBC, CarControllerParams
 from openpilot.selfdrive.car.interfaces import CarStateBase

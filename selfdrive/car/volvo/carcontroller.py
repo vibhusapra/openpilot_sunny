@@ -1,4 +1,4 @@
-from openpilot.selfdrive.can.packer import CANPacker
+from opendbc.can.packer import CANPacker
 from openpilot.selfdrive.car import Bus
 from openpilot.selfdrive.car.interfaces import CarControllerBase
 from openpilot.selfdrive.car.volvo.helpers import LCA3CounterSync
