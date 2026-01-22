@@ -1,8 +1,8 @@
-from opendbc.car import structs, Bus
+from selfdrive.car import structs, Bus
 from opendbc.can.parser import CANParser
-from opendbc.car.common.conversions import Conversions as CV
-from opendbc.car.volvo.values import DBC, CarControllerParams
-from opendbc.car.interfaces import CarStateBase
+from selfdrive.car.common.conversions import Conversions as CV
+from selfdrive.car.volvo.values import DBC, CarControllerParams
+from selfdrive.car.interfaces import CarStateBase
 
 GearShifter = structs.CarState.GearShifter
 TransmissionType = structs.CarParams.TransmissionType

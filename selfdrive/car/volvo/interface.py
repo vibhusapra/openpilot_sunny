@@ -1,7 +1,7 @@
-from opendbc.car import structs, get_safety_config
-from opendbc.car.interfaces import CarInterfaceBase
-from opendbc.car.volvo.carcontroller import CarController
-from opendbc.car.volvo.carstate import CarState
+from selfdrive.car import structs, get_safety_config
+from selfdrive.car.interfaces import CarInterfaceBase
+from selfdrive.car.volvo.carcontroller import CarController
+from selfdrive.car.volvo.carstate import CarState
 
 TransmissionType = structs.CarParams.TransmissionType
 

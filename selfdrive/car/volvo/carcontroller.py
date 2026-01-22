@@ -1,10 +1,10 @@
 from opendbc.can.packer import CANPacker
-from opendbc.car import Bus
-from opendbc.car.interfaces import CarControllerBase
-from opendbc.car.volvo.helpers import LCA3CounterSync
-from opendbc.car.volvo.live_testing import LiveTestingManager
-from opendbc.car.volvo.volvocan import create_lca_message, create_pscm_message, create_lca_3_message, create_lca_2_message, create_lca_4_message, create_lca_5_message, create_lca_6_message, create_lca_7_message, create_speed_message, create_speed_2_message, create_speed_3_message, create_0x1a_message, create_gear_position_message, create_egsm_message, create_pscm_related_message
-from opendbc.car.volvo.values import CarControllerParams
+from selfdrive.car import Bus
+from selfdrive.car.interfaces import CarControllerBase
+from selfdrive.car.volvo.helpers import LCA3CounterSync
+from selfdrive.car.volvo.live_testing import LiveTestingManager
+from selfdrive.car.volvo.volvocan import create_lca_message, create_pscm_message, create_lca_3_message, create_lca_2_message, create_lca_4_message, create_lca_5_message, create_lca_6_message, create_lca_7_message, create_speed_message, create_speed_2_message, create_speed_3_message, create_0x1a_message, create_gear_position_message, create_egsm_message, create_pscm_related_message
+from selfdrive.car.volvo.values import CarControllerParams
 
 
 class CarController(CarControllerBase):

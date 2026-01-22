@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 
-from opendbc.car.structs import CarParams
-from opendbc.car import Bus, CarSpecs, DbcDict, PlatformConfig, Platforms
-from opendbc.car.lateral import AngleSteeringLimits
-from opendbc.car.docs_definitions import CarDocs, CarHarness, CarParts
-from opendbc.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
+from selfdrive.car.structs import CarParams
+from selfdrive.car import Bus, CarSpecs, DbcDict, PlatformConfig, Platforms
+from selfdrive.car.lateral import AngleSteeringLimits
+from selfdrive.car.docs_definitions import CarDocs, CarHarness, CarParts
+from selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
 
 Ecu = CarParams.Ecu
 

@@ -1,6 +1,6 @@
 import random
-from opendbc.car.volvo.helpers import checksum_lca_2_message, checksum_2_0x69_message, checksum_1_pscm_related_message, checksum_2_pscm_related_message, checksum_lca_4_message, checksum_lca_5_message
-from opendbc.car.carlog import carlog
+from selfdrive.car.volvo.helpers import checksum_lca_2_message, checksum_2_0x69_message, checksum_1_pscm_related_message, checksum_2_pscm_related_message, checksum_lca_4_message, checksum_lca_5_message
+from selfdrive.car.carlog import carlog
 
 def create_lca_message(packer, lat_active: bool, apply_angle: float, msg_lca: dict,
                        overrides: dict | None = None):
