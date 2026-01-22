@@ -1,8 +1,8 @@
 """ AUTO-FORMATTED USING opendbc/car/debug/format_fingerprints.py, EDIT STRUCTURE THERE."""
-from selfdrive.car.structs import CarParams
-from selfdrive.car.volvo.values import CAR
+from cereal import car
+from openpilot.selfdrive.car.volvo.values import CAR
 
-Ecu = CarParams.Ecu
+Ecu = car.CarParams.Ecu
 
 FW_VERSIONS = {
 }

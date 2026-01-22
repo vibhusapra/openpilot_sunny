@@ -1,11 +1,12 @@
-from selfdrive.car import structs, Bus
-from opendbc.can.parser import CANParser
-from selfdrive.car.common.conversions import Conversions as CV
-from selfdrive.car.volvo.values import DBC, CarControllerParams
-from selfdrive.car.interfaces import CarStateBase
+from cereal import car
+from openpilot.selfdrive.car import Bus
+from openpilot.selfdrive.can.parser import CANParser
+from openpilot.common.conversions import Conversions as CV
+from openpilot.selfdrive.car.volvo.values import DBC, CarControllerParams
+from openpilot.selfdrive.car.interfaces import CarStateBase
 
-GearShifter = structs.CarState.GearShifter
-TransmissionType = structs.CarParams.TransmissionType
+GearShifter = car.CarState.GearShifter
+TransmissionType = car.CarParams.TransmissionType
 
 
 class CarState(CarStateBase):
@@ -32,11 +33,11 @@ class CarState(CarStateBase):
     self.msg_lca_4 = {}
     self.msg_lca_6 = {}
     self.msg_lca_7 = {}
-  def update(self, can_parsers) -> structs.CarState:
+  def update(self, can_parsers):
     cp_main = can_parsers[Bus.main]
     cp_pt = can_parsers[Bus.pt]
     cp_party = can_parsers[Bus.party]
-    ret = structs.CarState()
+    ret = car.CarState.new_message()
 
     # car speed
     # Basic vehicle state from BUS1_SPEED on PT bus

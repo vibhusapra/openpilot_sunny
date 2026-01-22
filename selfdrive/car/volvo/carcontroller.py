@@ -1,16 +1,16 @@
-from opendbc.can.packer import CANPacker
-from selfdrive.car import Bus
-from selfdrive.car.interfaces import CarControllerBase
-from selfdrive.car.volvo.helpers import LCA3CounterSync
-from selfdrive.car.volvo.live_testing import LiveTestingManager
-from selfdrive.car.volvo.volvocan import create_lca_message, create_pscm_message, create_lca_3_message, create_lca_2_message, create_lca_4_message, create_lca_5_message, create_lca_6_message, create_lca_7_message, create_speed_message, create_speed_2_message, create_speed_3_message, create_0x1a_message, create_gear_position_message, create_egsm_message, create_pscm_related_message
-from selfdrive.car.volvo.values import CarControllerParams
+from openpilot.selfdrive.can.packer import CANPacker
+from openpilot.selfdrive.car import Bus
+from openpilot.selfdrive.car.interfaces import CarControllerBase
+from openpilot.selfdrive.car.volvo.helpers import LCA3CounterSync
+from openpilot.selfdrive.car.volvo.live_testing import LiveTestingManager
+from openpilot.selfdrive.car.volvo.volvocan import create_lca_message, create_pscm_message, create_lca_3_message, create_lca_2_message, create_lca_4_message, create_lca_5_message, create_lca_6_message, create_lca_7_message, create_speed_message, create_speed_2_message, create_speed_3_message, create_0x1a_message, create_gear_position_message, create_egsm_message, create_pscm_related_message
+from openpilot.selfdrive.car.volvo.values import CarControllerParams
 
 
 class CarController(CarControllerBase):
-  def __init__(self, dbc_names, CP):
-    super().__init__(dbc_names, CP)
-    self.packer = CANPacker(dbc_names[Bus.party])
+  def __init__(self, dbc_name, CP, VM):
+    super().__init__(dbc_name, CP, VM)
+    self.packer = CANPacker(dbc_name)
     self.apply_angle_last = 0.0  # Track last applied steering angle
 
     # Live testing configuration manager
